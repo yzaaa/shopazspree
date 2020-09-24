@@ -35,7 +35,7 @@ class UsersController extends Controller
             [
                 'name' => 'required',
                 'email' => 'required',
-                'contactno' => 'required|size:11',
+                'contactno' => 'required',
                 'password' => 'required'
             ]
             
@@ -45,12 +45,12 @@ class UsersController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->contactno = $request->input('contactno');
-        $user->password = Hash::make($request['password']);
+        $user->password = $request->input('password');
+        // $user->password = Hash::make($request['password']);
         $user->regDate = Carbon::now();
         $user->save();
     
-        // $user = Users::findOrFail($user->id);
-        // $id = $user->id;
+        
         //return json based from the resource data
         return ( new Reference( $user ))
                 ->response()

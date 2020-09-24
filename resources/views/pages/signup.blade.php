@@ -246,7 +246,7 @@ contactno.onkeydown = function(e) {
                     $('.success_msg').html(response.msg);
                     $('.row-success').fadeIn(400);
                     setTimeout(function() {
-                        window.location.href = "pages.profile";
+                        window.location.href = "pages.login";
                     }, 1000);
                 }
             })
