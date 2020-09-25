@@ -42,8 +42,10 @@
                   <tr>
                     <td class="text-center"><input type="checkbox"></td>
                     <td><a href="#"><img src="/HTML/images/shop/recent/1.jpg" alt="img"></a></td>
-                    <td><a href="#" >WOMEN'S SHOES</a></td>
-                    <td><div class="font-black">$98.55</div></td>
+                    <td><a href="#" >{{ $data['products']->productName }}</a></td> 
+                    <td><div class="font-black">&#8369; {{ $data['products']->productPrice }}</div></td>
+                    {{-- <td><a href="#" >Product Name</a></td>
+                    <td><div class="font-black">&#8369; productPrice</div></td> --}}
                     <td>
                       <form class="form">
                         <input type="number" class="input-border white-bg" style="width: 60px;" min="1" max="100" value="1">
@@ -92,7 +94,7 @@
             
           </div>
           
-          {{-- <!-- DIVIDER -->
+          <!-- DIVIDER -->
           <hr class="mt-0 mb-60">
           
           <!-- CALCULATE -->
@@ -137,7 +139,7 @@
             <div class="col-sm-5 col-md-offset-1 ">
 
                 <h5 class="mt-60 mb-10">
-                  <span class="font-norm1 ">CART SUBTOTAL:</span> <strong>$259.45</strong>
+                  <span class="font-norm1 ">CART SUBTOTAL:</span> <strong>&#8369; 259.45</strong>
                 </h5>
                 
                 <h5 class="mt-10 mb-10">
@@ -145,7 +147,7 @@
                 </h5>
                 
                 <h3 class="mt-10 mb-30">
-                  <span class="font-light ">ORDER TOTAL:</span> <strong>$259.45</strong>
+                  <span class="font-light ">ORDER TOTAL:</span> <strong>&#8369; 259.45</strong>
                 </h3>
                 
                 <div>
@@ -154,7 +156,7 @@
                 
             </div>
           
-          </div> --}}
+          </div>
           
         </div>
       </div>

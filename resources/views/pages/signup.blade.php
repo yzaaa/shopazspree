@@ -7,7 +7,7 @@
     <div class="container white-bg plr-30 pt-30 pb-30 mt-80 mb-10 ">
 
         <div class="row mb-20">
-            <div class="div_sign_up">
+            <div class="">
                 <div class="row row-error">
                     <div class="col-md-12">
                         <div class="alert alert-danger nobottommargin">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 div_sign_up">
                     <div class="relative">
 
                         <div class="col-md-12" style="align-content: center;">
@@ -46,7 +46,7 @@
                 </div>
 
 
-                <div class="col-md-6">
+                <div class="col-md-6 div_sign_up">
                     <div class="relative">
                         <form id="signup-form" autocomplete="off">
                             <div class="col-md-12" style="align-content: center;">
@@ -60,7 +60,8 @@
                                                 <div class="col-md-12 mb-30">
                                                     <label>* Full Name</label>
                                                     <input type="text" name="name"
-                                                        data-msg-required="Please enter your Full Name" maxlength="100"
+                                                        data-msg-required="Please enter your Full Name" maxlength="30"
+                                                        onkeydown="return alphaOnly(event);"
                                                         class="form-control" id="name" required>
                                                 </div>
                                             </div>
@@ -204,6 +205,12 @@
         return stat;
     };
 
+
+    function alphaOnly(event) {
+  var key = event.keyCode;
+  return ((key >= 65 && key <= 90) || key == 8);
+};
+
     var contactno = document.getElementById('contactno');
 
 // Listen for input event on numInput.
@@ -231,13 +238,10 @@ contactno.onkeydown = function(e) {
     });
 
     $('#btnsign').click(function() {
-
         if (validateRequiredFields($('#signup-form'))) {
-
             $(this).toggleClass('disabled');
             $(this).find('span').toggleClass('fa fa-spinner fa-spin');
             $('.btnsign_label').html('Signing Up');
-
             CreateUser().done(function(response) {
 
                 if (response.stat == "success") {
@@ -246,8 +250,8 @@ contactno.onkeydown = function(e) {
                     $('.success_msg').html(response.msg);
                     $('.row-success').fadeIn(400);
                     setTimeout(function() {
-                        window.location.href = "pages.login";
-                    }, 1000);
+                        window.location.href = "/login";
+                    },1000);
                 }
             })
             .always(function() {

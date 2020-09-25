@@ -52,10 +52,10 @@ class PagesController extends Controller
         return view ('pages.trackorder');
     }
 
-    // public function productdetails()
-    // {
-    //     return view ('pages.productdetails');
-    // }
+    public function topay()
+    {
+        return view ('pages.topay');
+    }
 
     public function productdetails($id)
     {

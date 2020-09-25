@@ -26,8 +26,11 @@ Route::get('/login', 'PagesController@login');
 
 
 Route::get('/trackorder', 'PagesController@trackorder');
+
+Route::get('/mycart/{id}', 'PagesController@mycart');
 // Route::get('/mycart/{id}', 'ProfileController@cart');
 Route::get('/mycart', 'ProfileController@cart');
+
 Route::get('/profile', 'ProfileController@index');
 // Route::get('/profile', 'PagesController@profile');
 
@@ -36,7 +39,7 @@ Route::post('/users/create', 'UsersController@create');
 
 
 Route::get('/productdetails/{id}', 'PagesController@productdetails');
-Route::get('/productdetails', 'PagesController@productdetails');
+Route::get('/checkout', 'ProfileController@quotation');
 
 Route::get('/welcomeseller', 'PagesController@welcomeseller');
 

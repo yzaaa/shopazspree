@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Users;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
@@ -49,12 +50,24 @@ class UsersController extends Controller
         // $user->password = Hash::make($request['password']);
         $user->regDate = Carbon::now();
         $user->save();
+
+        $user = Users::findOrFail($user->id);
+        $user_id = $user->id;
+
+        $data = array(
+            'id' => $user->id,
+            'email' => $request->input('name')
+            );
+                
+        $response['stat']='success';
+        $response['msg']='<b>Successfully Signup.</b> Please login now.';
+        echo json_encode($response);
     
         
         //return json based from the resource data
-        return ( new Reference( $user ))
-                ->response()
-                ->setStatusCode(201);
+        // return ( new Reference( $user ))
+        //         ->response()
+        //         ->setStatusCode(201);
 
         
 

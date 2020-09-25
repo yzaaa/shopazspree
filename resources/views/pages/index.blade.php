@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <title>{{config('app.name', 'Online Shopping')}}</title>
+        <title>{{config('app.name', 'Azspree')}}</title>
         <meta charset=utf-8 >
 		<meta name="robots" content="index, follow" > 
-		<meta name="keywords" content="Online Shopping" > 
-		<meta name="description" content="Online Shopping" > 
+		<meta name="keywords" content="Azspree" > 
+		<meta name="description" content="Azspree" > 
         <meta name="author" content="Geko Business Solutions Corp.">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
         <meta name="csrf-token" content="{{ csrf_token() }}">

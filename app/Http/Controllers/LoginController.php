@@ -70,7 +70,6 @@ class LoginController extends Controller
     public function logout()
     {
         Session::forget('id');
-        // Session::forget('company_name');
         return view('pages.login');
     }
 }
