@@ -72,14 +72,23 @@
         </li> --}}
       
         <!-- MENU ITEM -->
-        <li id="menu-cart" >
+        {{-- <li id="menu-cart" >
           <a href="/mycart"><div class="main-menu-title"><span aria-hidden="true" class="icon_cart"></span>CART (0)</div></a>
-        </li>
+        </li> --}}
 
         <!-- MENU ITEM -->
-        <?php if(Session::has('id')){ ?>
+        <?php if(Session::has('user_hash')){ ?>
+          <li id="menu-cart" >
+            <a href="/mycart"><div class="main-menu-title">CART (0) {{ session('fullname') }}</div></a>
+        </li>
+      <?php }else{?>
+          <li ><a href="/login"><div class="main-menu-title">LOGIN</div></a></li>
+      <?php }?>
+
+        <!-- MENU ITEM -->
+        <?php if(Session::has('user_hash')){ ?>
           <li class="parent">
-            <a href="/profile"><div class="main-menu-title">{{ session('name') }}</div></a>
+            <a href="/profile"><div class="main-menu-title">{{ session('fullname') }}</div></a>
             <ul class="sub">
               <li><a href="/profile">Profile</a> </li>
               <li><a href="/logout">Logout</a> </li>

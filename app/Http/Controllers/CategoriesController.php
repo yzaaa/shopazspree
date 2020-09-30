@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $categories['categories'] =  DB::table('category')->where('id', null)->get();
+        $categories['categories'] =  DB::table('inct')->where('inct_hash', null)->get();
     }
 
     /**

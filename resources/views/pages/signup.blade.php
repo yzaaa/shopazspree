@@ -16,7 +16,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 div_sign_up">
+                <div class="row div_success">
+                    <div class="col-md-12" style="align-content: center;">
+                        <div class="row row-success">
+                            <div class="col-md-12">
+                                <div class="alert alert-success">
+                                    <span aria-hidden="true" class="alert-icon icon_like"></span>
+                                    <span class="success_msg"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
                     <div class="relative">
 
                         <div class="col-md-12" style="align-content: center;">
@@ -46,7 +58,7 @@
                 </div>
 
 
-                <div class="col-md-6 div_sign_up">
+                <div class="col-md-6 ">
                     <div class="relative">
                         <form id="signup-form" autocomplete="off">
                             <div class="col-md-12" style="align-content: center;">
@@ -59,10 +71,10 @@
                                             <div class="row">
                                                 <div class="col-md-12 mb-30">
                                                     <label>* Full Name</label>
-                                                    <input type="text" name="name"
+                                                    <input type="text" name="fullname"
                                                         data-msg-required="Please enter your Full Name" maxlength="30"
                                                         onkeydown="return alphaOnly(event);"
-                                                        class="form-control" id="name" required>
+                                                        class="form-control" id="fullname" required>
                                                 </div>
                                             </div>
 
@@ -81,8 +93,8 @@
                                                     <input type="number"
                                                         {{-- pattern="\d{4}[\-]\d{3}[\-]\d{4}" --}}
                                                         data-msg-required="Please enter your Contact Number"
-                                                        min="0" class="form-control" name="contactno"
-                                                        id="contactno" required>
+                                                        min="0" class="form-control" name="contact_no"
+                                                        id="contact_no" required>
                                                 </div>
                                             </div>
 
@@ -124,19 +136,6 @@
 
                     </div>
 
-                </div>
-
-                <div class="row div_success">
-                    <div class="col-md-12" style="align-content: center;">
-                        <div class="row row-success">
-                            <div class="col-md-12">
-                                <div class="alert alert-success">
-                                    <span aria-hidden="true" class="alert-icon icon_like"></span>
-                                    <span class="success_msg"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -211,10 +210,10 @@
   return ((key >= 65 && key <= 90) || key == 8);
 };
 
-    var contactno = document.getElementById('contactno');
+    var contact_no = document.getElementById('contact_no');
 
 // Listen for input event on numInput.
-contactno.onkeydown = function(e) {
+contact_no.onkeydown = function(e) {
     if(!((e.keyCode > 95 && e.keyCode < 106)
       || (e.keyCode > 47 && e.keyCode < 58) 
       || e.keyCode == 8)) {

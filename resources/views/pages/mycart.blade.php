@@ -22,49 +22,50 @@
               <!-- CONTENT -->
               <div class="page-section p-140-cont">
         <div class="container">
-          <div class="row mb-40">
-          
-            <div class="col-md-12">
-              <div class="table-responsive">
-                <table class="table table-striped shopping-cart-table">
-                <thead>
-                  <tr>
-                  <th class="text-center"><input type="checkbox"></th>
-                  <th></th>
-                  <th>PRODUCT</th>
-                  <th>UNIT PRICE</th>
-                  <th>QUANTITY</th>
-                  <th>TOTAL</th>
-                  <th>ACTION</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="text-center"><input type="checkbox"></td>
-                    <td><a href="#"><img src="/HTML/images/shop/recent/1.jpg" alt="img"></a></td>
-                    <td><a href="#" >{{ $data['products']->productName }}</a></td> 
-                    <td><div class="font-black">&#8369; {{ $data['products']->productPrice }}</div></td>
-                    {{-- <td><a href="#" >Product Name</a></td>
-                    <td><div class="font-black">&#8369; productPrice</div></td> --}}
-                    <td>
-                      <form class="form">
-                        <input type="number" class="input-border white-bg" style="width: 60px;" min="1" max="100" value="1">
-                      </form>
-                    </td>
-                    <td><div class="font-black">$98.55</div></td>
-                    <td><a href="#" class="icon-close" ><span aria-hidden="true" class="icon_close"></span></a></td>
-                  </tr>
-                  <tr>
-                    <td colspan="7">
-                      <center>No Data Available</center>
-                    </td>
-                  </tr>
-                </tbody>
-                </table>
-              </div>
-            </div>
-          
-          </div>
+                <div class="row mb-40">
+                
+                  <div class="col-md-12">
+                    <div class="table-responsive">
+                      <table class="table table-striped shopping-cart-table">
+                      <thead>
+                        <tr>
+                        <th class="text-center"><input type="checkbox"></th>
+                        <th></th>
+                        <th>PRODUCT</th>
+                        <th>UNIT PRICE</th>
+                        <th>QUANTITY</th>
+                        <th>TOTAL</th>
+                        <th>ACTION</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                        <tr>
+                          <td class="text-center"><input type="checkbox"></td>
+                          <td><a href="#"><img src="/HTML/images/shop/recent/1.jpg" alt="img"></a></td>
+                          <td><a href="#" >PRODUCT NAME</a></td> 
+                          <td><div class="font-black">&#8369; PRODUCT PRICE</div></td>
+                          {{-- <td><a href="#" >Product Name</a></td>
+                          <td><div class="font-black">&#8369; productPrice</div></td> --}}
+                          <td>
+                            <form class="form">
+                              <input type="number" class="input-border white-bg" style="width: 60px;" min="1" max="100" value="1">
+                            </form>
+                          </td>
+                          <td><div class="font-black">$98.55</div></td>
+                          <td><a href="#" class="icon-close" ><span aria-hidden="true" class="icon_close"></span></a></td>
+                        </tr>
+                        <tr>
+                          <td colspan="7">
+                            <center>No Data Available</center>
+                          </td>
+                        </tr>
+                      </tbody>
+                      </table>
+                    </div>
+                  </div>
+                
+                </div>
           
           <!-- DIVIDER -->
           <hr class="mt-0 mb-30">
@@ -89,7 +90,7 @@
             
             <div class="col-sm-6 text-right text-center-767 mb-30">
                    <span style="font-size:18px" class="font-light">ORDER TOTAL:</span> <strong style="font-size:18px">&#8369; 0.00</strong>
-              <a href="#" class="button medium gray w-100-767">UPROCEED TO CHECKOUT</a>
+              <a href="#" class="button medium gray w-100-767">PROCEED TO CHECKOUT</a>
             </div>
             
           </div>

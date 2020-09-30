@@ -28,7 +28,7 @@
   <div class="col-md-4 col-lg-4 pb-80" >
       
     <div class="post-prev-img">
-      <a href="/productdetails/{{$products->id}}"><img src="{{$products->productImage1}}" alt="img"></a>
+      <a href="/productdetails/{{$products->inmr_hash}}"><img src="{{$products->photo}}" alt="img"></a>
       {{-- <a href="/productdetails/{{$products->id}}"><img src="{{ config('global.backend_site') }}{{ $data['content']->productImage1}}" alt="img"></a> --}}
       
     </div>
@@ -36,31 +36,14 @@
       <span class="sale-label label-danger bg-red">SALE</span>
     </div>   --}}
     <div class="post-prev-title mb-5">
-      <h3><a class="font-norm a-inv" href="/productdetails/{{$products->id}}">{{$products->productCompany}}</a></h3>
+      <h3><a class="font-norm a-inv" href="/productdetails/{{$products->inmr_hash}}">{{$products->product_details}}</a></h3>
     </div>
       
     <div class="shop-price-cont">
       {{-- <del>$130.00</del>&nbsp; --}}
-      <strong>&#8369; {{$products->productPrice}}</strong>
+      <strong>&#8369; {{$products->cost_amt}}</strong>
     </div>
       
-    <div class="post-prev-more-cont clearfix">
-      <div class="shop-add-btn-cont">
-        <a class="button medium gray-light shop-add-btn" href="/mycart/{{$products->id}}">ADD TO CART</a>
-      </div>
-      <div class="shop-sub-btn-cont" >
-        <a href="#" class="post-prev-count"><span aria-hidden="true" class="icon_heart_alt"></span></a>
-        <a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
-        <span aria-hidden="true" class="social_share"></span>
-        </a>
-        <ul class="social-menu dropdown-menu dropdown-menu-right" role="menu">
-          <li><a href="#"><span aria-hidden="true" class="social_facebook"></span></a>
-          </li>
-          <li><a href="#"><span aria-hidden="true" class="social_twitter"></span></a></li>
-          <li><a href="#"><span aria-hidden="true" class="social_dribbble"></span></a></li>
-        </ul>
-      </div>
-    </div>
   
   </div>
   <?php endforeach; ?>                          
@@ -109,13 +92,13 @@
       <?php foreach ($data['categories'] as $category): ?>
         <li class="parent clearfix">
           <div class="widget-posts-descr">
-          <a href="/categories/{{$category->id}}">{{$category->categoryName}}</a>
-          <ul class="sub">
-            {{-- @foreach($data['sub'] as $subcat )
+          <a href="/categories/{{$category->inct_hash}}">{{$category->cat_name}}</a>
+          {{-- <ul class="sub">
+            @foreach($data['sub'] as $subcat )
             <li><a href="/#/{{$subcat->subcat_id}}">{{$subcat->subcategory}}</a></li>
-            @endforeach --}}
+            @endforeach
             <li><a href="/publications">SEE ALL</a> </li>
-          </ul>
+          </ul> --}}
           </div>
         </li>
         <?php endforeach; ?>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use DB;
@@ -45,15 +45,15 @@ class LoginController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
-        $result = Users::select('*')
+        $result = User::select('*')
                     ->where('email', $email)
                     ->where('password', $password)
                     ->get();
         
         if(count($result) > 0){
 
-            session()->put('id', $result[0]->id);
-            session()->put('name', $result[0]->name);
+            session()->put('user_hash', $result[0]->user_hash);
+            session()->put('fullname', $result[0]->fullname);
             session()->save();
 
             $response['stat']='success';
@@ -69,7 +69,7 @@ class LoginController extends Controller
     
     public function logout()
     {
-        Session::forget('id');
+        Session::forget('user_hash');
         return view('pages.login');
     }
 }

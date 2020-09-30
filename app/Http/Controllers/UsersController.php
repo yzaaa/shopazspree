@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Users;
+use App\Models\User;
+use App\Models\CartHeader;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 use Hash;
@@ -34,29 +35,36 @@ class UsersController extends Controller
 
         Validator::make($request->all(),
             [
-                'name' => 'required',
+                'fullname' => 'required',
                 'email' => 'required',
-                'contactno' => 'required',
+                'contact_no' => 'required',
                 'password' => 'required'
             ]
             
         )->validate();
 
-        $user = new Users();
-        $user->name = $request->input('name');
+        $user = new User();
+        $user->fullname = $request->input('fullname');
         $user->email = $request->input('email');
-        $user->contactno = $request->input('contactno');
+        $user->contact_no = $request->input('contact_no');
         $user->password = $request->input('password');
         // $user->password = Hash::make($request['password']);
-        $user->regDate = Carbon::now();
+        $user->create_datetime = Carbon::now();
         $user->save();
 
-        $user = Users::findOrFail($user->id);
-        $user_id = $user->id;
+        //For SRHR
+        $addcart = new CartHeader();
+        $addcart->user_hash = $user->user_hash;
+        $addcart->create_datetime = Carbon::now();
+        $addcart->save();
+
+        $user = User::findOrFail($user->user_hash);
+        $user_hash = $user->user_hash;
+
 
         $data = array(
-            'id' => $user->id,
-            'email' => $request->input('name')
+            'user_hash' => $user->user_hash,
+            'email' => $request->input('fullname')
             );
                 
         $response['stat']='success';
@@ -64,6 +72,11 @@ class UsersController extends Controller
         echo json_encode($response);
     
         
+    
+        // return ( new Reference( $addcart ))
+        //         ->response()
+        //         ->setStatusCode(201);
+
         //return json based from the resource data
         // return ( new Reference( $user ))
         //         ->response()

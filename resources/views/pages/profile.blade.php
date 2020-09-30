@@ -8,11 +8,11 @@
                 -moz-box-shadow: 10px 10px 35px -5px rgba(227,227,227,1);
                 box-shadow: 10px 10px 35px -5px rgba(227,227,227,1);">
                     <div class="panel-body">
-                        <center> <b style="color:black">{{ $data['profile']->name }}</b> </center>
+                        <center> <b style="color:black">{{ $data['profile']->fullname }}</b> </center>
                         <hr style="margin:0;padding:0px;">
                         <br>
                         <i class="fa fa-envelope"></i> <b style="color:black">{{ $data['profile']->email }}</b><br>
-                        <i class="fa fa-phone"></i> <b style="color:black">{{ $data['profile']->contactno }}</b>
+                        <i class="fa fa-phone"></i> <b style="color:black">{{ $data['profile']->contact_no }}</b>
                         {{-- <b>BUSINESS DETAILS</b> <i class="fa fa-cog"></i>
                         <hr style="margin:0;padding:0px;">
                         <i class="fa fa-building"></i> <br />
@@ -76,9 +76,7 @@
                                 </thead>
                           
                             <tbody>
-                              <?php 
-                        if(count($data['orders']) > 0){
-                        foreach ($data['orders'] as $order){ ?>
+                           
                                 <tr >
                                     <td colspan="5">      
                                         <div class="col-md-12 col-lg-12" >
@@ -89,25 +87,25 @@
                                           </div>
                                           <div class="col-md-6">
                                             {{-- <a href="/productdetails/{{$order->id}}"><b style="color:black">{{ $order->productName }}</b></a> --}}
-                                            <b style="color:black">{{ $order->productName }}</b>
+                                            {{-- <b style="color:black">{{ $order->productName }}</b> --}}
                                           <br>
-                                          x{{ $order->quantity }}
+                                          {{-- x{{ $order->quantity }} --}}
                                             <br>
-                                            <label style="font-size:16px">  &#8369; {{ $order->productPrice }}</label><br>
+                                            {{-- <label style="font-size:16px">  &#8369; {{ $order->productPrice }}</label><br> --}}
                                           </div>
                                           <div class="col-md-4">
-                                          <label style="color:blue; font-size:18px"> {{ $order->orderStatus }}</label><br>
+                                          {{-- <label style="color:blue; font-size:18px"> {{ $order->orderStatus }}</label><br> --}}
                                           </div>
                                         </div>
                                       </td>
                                 </tr>
-                                <?php }}else{ ?>
+                                
                                   <tr>
                                     <td colspan="5">
                                       <center>No Data Available</center>
                                     </td>
                                   </tr>
-                                <?php }?>
+                               
                               </tbody>
                             </table>
                     </div>
